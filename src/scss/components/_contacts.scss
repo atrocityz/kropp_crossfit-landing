@@ -1,0 +1,182 @@
+/* stylelint-disable scss/selector-no-redundant-nesting-selector */
+@use "../mixins" as *;
+
+.contacts {
+  &__inner {
+    background-color: var(--dark-color);
+    padding-block: 140px;
+
+    @include tablet {
+      padding-block: 80px;
+    }
+
+    @include mobile {
+      padding-block: 50px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    column-gap: 62px;
+    align-items: center;
+    justify-content: start;
+    margin-bottom: 69px;
+
+    @include tablet {
+      flex-direction: column;
+      row-gap: 10px;
+    }
+
+    @include small-tablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__descr {
+    max-width: 700px;
+
+    @include tablet {
+      text-align: center;
+    }
+  }
+
+  &__list {
+    display: grid;
+    column-gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 30px;
+    }
+
+    @include small-tablet {
+      grid-template-columns: 1fr;
+      row-gap: 50px;
+    }
+  }
+
+  &__item {
+    max-width: 303px;
+
+    &-title {
+      position: relative;
+      margin: 0;
+      margin-bottom: 15px;
+      line-height: 173%;
+      text-transform: uppercase;
+
+      @include font(clamp(20px, 1.14vw, 22px), 700, var(--light-color));
+
+      @include small-tablet {
+        margin-bottom: 10px;
+        max-width: 250px;
+      }
+
+      @include small-mobile {
+        margin-bottom: 0;
+      }
+    }
+
+    &:last-child &-title::after {
+      content: "";
+      position: absolute;
+      left: 6em;
+      top: 20%;
+      height: 0.75em;
+      background: url("../img/svg/white-arrow-icon.svg") center/contain no-repeat;
+      transform: translateY(-50%);
+      transform: rotate(90deg);
+      aspect-ratio: 1;
+    }
+
+    &-content {
+      line-height: 175%;
+      letter-spacing: 0.05em;
+
+      @include font(16px, 300, var(--light-color));
+
+      &_timetable:not(:last-child) {
+        margin-bottom: 13px;
+      }
+
+      & address {
+        margin-bottom: 35px;
+        font-style: normal;
+      }
+
+      & p,
+      address {
+        max-width: 250px;
+      }
+    }
+
+    @include small-tablet {
+      max-width: 100%;
+    }
+  }
+
+  &__links {
+    & a {
+      display: inline-block;
+      color: var(--light-color);
+    }
+  }
+
+  &__input {
+    position: relative;
+    margin-bottom: 50px;
+    width: 100%;
+  }
+
+  &__socials {
+    display: flex;
+    column-gap: 18px;
+    align-items: end;
+    justify-content: start;
+  }
+
+  &__copyright {
+    line-height: 200%;
+    padding-block: 15px;
+
+    @include font(14px, 300, var(--light-color));
+
+    @include small-tablet {
+      text-align: center;
+    }
+  }
+}
+
+.content {
+  &__form {
+    position: relative;
+    margin-bottom: 50px;
+
+    @include small-tablet {
+      max-width: 50%;
+    }
+
+    @include small-mobile {
+      max-width: 100%;
+    }
+  }
+
+  &__input {
+    border-color: var(--light-color);
+    width: 100%;
+  }
+
+  &__btn {
+    position: absolute;
+    right: -1px;
+    border: 1px solid var(--light-color);
+    border-radius: var(--border-radius);
+    height: 100%;
+    aspect-ratio: 1;
+
+    @include hover {
+      background-color: var(--gray-color);
+    }
+  }
+}

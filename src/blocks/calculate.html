@@ -1,0 +1,69 @@
+<section class="calculate">
+  <div class="calculate__inner container">
+    <div class="calculate__body">
+      <h2 class="calculate__title title--backdrop title--medium" data-title="BMI">Input your BMI</h2>
+      <div class="calculate__descr">
+        <p>Duo graece ponderum ne, ei mel aliquando. Pro te<br> tamquam nonumes, nam no nemore epicurei</p>
+      </div>
+      <form class="calculate__form">
+        <div class="calculate__form-body">
+          <label class="visually-hidden" for="height">Height</label>
+          <input class="input-reset calculate__input input input-reset" id="height" required placeholder="Height / cm"
+            type="number">
+          <label class="visually-hidden" for="weight">Weight</label>
+          <input class="input-reset calculate__input input input-reset" id="weight" required placeholder="Weight / kg"
+            type="number">
+          <label class="visually-hidden" for="age">Age</label>
+          <input class="input-reset calculate__input input input-reset" id="height" required placeholder="Age"
+            type="number">
+          <label class="visually-hidden" for="gender">Gender</label>
+          <select class="calculate__input input input-reset" id="gender" required>
+            <option value="" disabled selected hidden>Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+          <label class="visually-hidden" for="activity-factor">Activity factor</label>
+          <select class="calculate__input input input-reset wide" id="activity-factor" required>
+            <option value="" disabled selected hidden>Select an activity factor:</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+        </div>
+        <button class=" calculate__button btn btn-reset" type="submit">Calculate</button>
+      </form>
+    </div>
+    <div class="calculate__table-wrapper">
+      <table class="calculate__table">
+        <thead>
+          <tr>
+            <th>BMI</th>
+            <th>Weight status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Below 18.5</td>
+            <td>Underweight</td>
+          </tr>
+          <tr>
+            <td>18.5 - 24.9</td>
+            <td>Healthy</td>
+          </tr>
+          <tr>
+            <td>25.0 - 29.9</td>
+            <td>Overweight</td>
+          </tr>
+          <tr>
+            <td>30.0 - and Above</td>
+            <td>Obese</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2"><b>BMR</b> Metabolic Rate / <b>BMI</b> Body Mass Index</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</section>

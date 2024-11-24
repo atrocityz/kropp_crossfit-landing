@@ -1,0 +1,65 @@
+@use "../mixins" as *;
+
+.training-types {
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 120px;
+  background-color: var(--dark-color);
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    gap: 60px;
+
+    @include medium-desktop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include small-tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+  }
+
+  &__item {
+    --trainingTypesItemBgIconSize: 80px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: var(--trainingTypesItemBgIconSize);
+    background: url("../img/svg/transparent-arrow-icon.svg") 100% 0 / var(--trainingTypesItemBgIconSize) no-repeat;
+    row-gap: 32px;
+
+    @include small-tablet {
+      --trainingTypesItemBgIconSize: 50px;
+
+      row-gap: 15px;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    height: 142px;
+    object-fit: contain;
+
+    @include small-tablet {
+      height: 132px;
+      max-width: 120px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    line-height: 175%;
+    letter-spacing: 0.05em;
+
+    @include font(var(--main-size), 700, var(--light-color));
+  }
+
+  @include small-tablet {
+    padding-top: 50px;
+    padding-bottom: 100px;
+  }
+}

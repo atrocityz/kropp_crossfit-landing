@@ -1,0 +1,16 @@
+@forward "vars";
+@forward "mixins";
+@forward "fonts";
+@forward "settings";
+
+// Подключение созданых компонентов
+@forward "components/btn";
+@forward "components/header";
+@forward "components/hero";
+@forward "components/motivation";
+@forward "components/training-types";
+@forward "components/join-us";
+@forward "components/find-us";
+@forward "components/family";
+@forward "components/calculate";
+@forward "components/contacts";

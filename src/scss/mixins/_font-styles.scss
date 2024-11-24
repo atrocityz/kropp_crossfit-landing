@@ -1,0 +1,11 @@
+/* stylelint-disable declaration-empty-line-before */
+/* stylelint-disable scss/declaration-nested-properties */
+/* stylelint-disable order/properties-order */
+@mixin font($size: var(--main-size), $weight: 400, $color: var(--light-color), $style: normal) {
+  font: {
+    size: $size;
+    weight: $weight;
+    style: $style;
+  }
+  color: $color;
+}

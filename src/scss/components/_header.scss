@@ -1,0 +1,139 @@
+@use "../mixins" as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--header-height);
+  max-width: 100%;
+  padding-inline: 32px;
+
+  @include tablet {
+    flex-wrap: wrap;
+    padding-top: 20px;
+    padding-inline: 15px;
+    row-gap: 10px;
+  }
+
+  @include small-tablet {
+    padding-top: 10px;
+  }
+
+  &__logo {
+    flex-shrink: 0;
+  }
+
+  &__actions {
+    display: flex;
+    column-gap: 40px;
+    align-items: center;
+
+    @include small-tablet {
+      column-gap: 20px;
+    }
+  }
+
+  &__button-book {
+    display: inline-flex;
+    align-items: center;
+    border-radius: var(--border-radius);
+    height: 38px;
+    line-height: 200%;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    text-transform: uppercase;
+    background: var(--light-color);
+    padding-inline: 26px;
+
+    @include font(12px, 700, var(--dark-color));
+
+    @include hover {
+      background-color: var(--gray-color);
+    }
+
+    @include small-mobile {
+      letter-spacing: 0.1em;
+      padding-inline: 15px;
+    }
+  }
+
+  &__button-burger {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid var(--light-color);
+    border-radius: 50%;
+    padding-left: 8px;
+    width: 40px;
+    color: var(--light-color);
+    aspect-ratio: 1;
+    row-gap: 4px;
+
+    &_line {
+      width: 6px;
+      height: 1px;
+      box-shadow: 16px 0 0 currentcolor;
+      background-color: currentcolor;
+    }
+
+    @include hover {
+      border-color: currentcolor;
+      color: var(--gray-color);
+    }
+  }
+}
+
+.nav {
+  @include tablet {
+    flex-basis: 100%;
+    order: 2;
+  }
+
+  &__list {
+    display: flex;
+    column-gap: 50px;
+    align-items: center;
+
+    @include small-tablet {
+      column-gap: 30px;
+      justify-content: center;
+    }
+
+    @include small-mobile {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: inline-flex;
+    column-gap: 7px;
+    align-items: center;
+    height: var(--header-height);
+    line-height: 150%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    &.is-current::after {
+      content: "" / "Current link";
+      border-radius: 5px;
+      width: 5px;
+      background: currentcolor;
+      aspect-ratio: 1;
+    }
+
+    @include font(12px, 700);
+
+    @include hover {
+      color: var(--gray-color);
+    }
+
+    @include tablet {
+      height: 50px;
+    }
+
+    @include small-mobile {
+      height: 30px;
+    }
+  }
+}

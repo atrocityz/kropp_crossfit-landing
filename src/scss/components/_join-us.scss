@@ -1,0 +1,133 @@
+@use "../mixins" as *;
+
+.join-us {
+  &__video-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 150px 30px;
+    background: url("../img/join-us-bg.webp") center / cover no-repeat var(--background-color);
+
+    @include small-tablet {
+      padding: 80px 15px;
+    }
+  }
+
+  &__video {
+    width: 100%;
+    height: auto;
+    max-width: 960px;
+
+    &-btn {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      display: inline-flex;
+      column-gap: 4px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--light-color);
+      border-radius: 50%;
+      width: 200px;
+      text-transform: uppercase;
+      transform: translate(-50%, -50%);
+      transition-duration: var(--transition-duration);
+      aspect-ratio: 1;
+
+      @include font(14px, 700, var(--light-color));
+
+      &::after {
+        content: "";
+        height: 26px;
+        background: url("../img/svg/play-icon.svg") center/contain no-repeat;
+        transition-duration: var(--transition-duration);
+        aspect-ratio: 1;
+      }
+
+      &:hover {
+        color: var(--dark-color);
+        background-color: var(--gray-color);
+
+        &::after {
+          filter: invert(1);
+        }
+      }
+
+      @include small-tablet {
+        width: 100px;
+      }
+    }
+  }
+
+  &__body {
+    padding-bottom: 150px;
+
+    @include mobile {
+      padding-bottom: 80px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin: 0 auto;
+    margin-top: -0.4em;
+    line-height: 1;
+    text-align: center;
+
+    @include font(clamp(64px, 9.37vw, 180px), 700, var(--light-color));
+
+    &::after {
+      content: "";
+      display: inline-block;
+      margin-left: 0.14em;
+      height: 0.7em;
+      background: url("../img/svg/white-arrow-icon.svg") center/contain no-repeat;
+      transform: rotate(-90deg);
+      aspect-ratio: 1;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 130px;
+
+      @include small-tablet {
+        margin-bottom: 100px;
+      }
+
+      @include mobile {
+        margin-bottom: 80px;
+      }
+    }
+  }
+
+  &__form {
+    &-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      row-gap: 7px;
+
+      &:not(:last-child) {
+        margin-bottom: 52px;
+      }
+    }
+
+    &-body {
+      display: flex;
+      column-gap: 20px;
+      align-items: center;
+      justify-content: center;
+
+      @include small-tablet {
+        flex-direction: column;
+        row-gap: 20px;
+      }
+    }
+
+    &-input {
+      max-width: 400px;
+    }
+  }
+}

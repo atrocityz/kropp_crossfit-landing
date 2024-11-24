@@ -1,0 +1,76 @@
+@use "../mixins" as *;
+
+.motivation {
+  &__item:nth-child(odd) {
+    background-color: var(--dark-color);
+  }
+
+  &__item:nth-child(even) .motivation__card {
+    flex-direction: row-reverse;
+
+    @include small-tablet {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__card {
+    display: flex;
+    column-gap: clamp(30px, 10.42vw, 200px);
+    align-items: center;
+    justify-content: start;
+
+    &-body {
+      padding-left: 35px;
+    }
+
+    &-image {
+      margin-block: -60px;
+
+      @include desktop {
+        margin-block: -20px;
+      }
+
+      @include tablet {
+        max-width: 30%;
+        margin-block: 0;
+      }
+
+      @include small-tablet {
+        max-width: 50%;
+      }
+    }
+
+    &-title:not(:last-child) {
+      margin-bottom: 14px;
+    }
+
+    &-descr {
+      margin: 0;
+      max-width: 400px;
+      line-height: 175%;
+      letter-spacing: 0.05em;
+
+      &:not(:last-child) {
+        margin-bottom: 37px;
+      }
+
+      @include font(var(--main-size), 300, var(--gray-color));
+
+      @include small-tablet {
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    @include tablet {
+      padding-block: 50px;
+    }
+
+    @include small-tablet {
+      flex-direction: column-reverse;
+      padding-block: 20px;
+      row-gap: 30px;
+    }
+  }
+}

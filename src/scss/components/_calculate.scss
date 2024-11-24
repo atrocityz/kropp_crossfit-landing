@@ -1,0 +1,191 @@
+/* stylelint-disable scss/selector-no-redundant-nesting-selector */
+@use "../mixins" as *;
+
+.calculate {
+  padding-block: 146px;
+
+  &__inner {
+    display: flex;
+    column-gap: 36px;
+    align-items: center;
+    justify-content: start;
+
+    @include tablet {
+      column-gap: 20px;
+    }
+
+    @include small-tablet {
+      flex-direction: column;
+      row-gap: 52px;
+    }
+  }
+
+  &__body {
+    flex-grow: 1;
+    max-width: 627px;
+  }
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__descr {
+    max-width: 450px;
+    line-height: 175%;
+    letter-spacing: 0.05em;
+
+    @include font(16px, 300, var(--gray-color));
+
+    &:not(:last-child) {
+      margin-bottom: 31px;
+    }
+  }
+
+  &__form {
+    &-body {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px 30px;
+
+      &:not(:last-child) {
+        margin-bottom: 26px;
+      }
+
+      @include small-desktop {
+        grid-template-columns: 1fr;
+
+        .wide {
+          grid-column: auto;
+        }
+      }
+    }
+  }
+
+  &__button {
+    @include small-desktop {
+      width: 100%;
+    }
+  }
+
+  &__table {
+    border-collapse: collapse;
+
+    &-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 610px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: -1;
+        border-radius: 50%;
+        width: 100%;
+        background-color: var(--dark-color);
+        transform: translate(-50%, -50%);
+        aspect-ratio: 1;
+
+        @include small-tablet {
+          display: none;
+        }
+      }
+
+      @include tablet {
+        max-width: 510px;
+      }
+    }
+
+    & :is(th, td) {
+      padding-right: 30px;
+
+      @include tablet {
+        padding-right: 15px;
+      }
+    }
+
+    & :is(th, td):not(:first-child) {
+      padding-left: 30px;
+
+      @include tablet {
+        padding-right: 15px;
+      }
+    }
+
+    & th {
+      line-height: 175%;
+      letter-spacing: 0.05em;
+      text-align: left;
+      text-transform: uppercase;
+      color: var(--light-color);
+      padding-block: 20px;
+
+      @include font(16px, 700, var(--light-color));
+
+      @include tablet {
+        padding-block: 10px;
+      }
+    }
+
+    & td {
+      line-height: 175%;
+      letter-spacing: 0.05em;
+      padding-block: 14px;
+
+      @include font(16px, 300, var(--gray-color));
+
+      @include tablet {
+        padding-block: 10px;
+      }
+    }
+
+    & tfoot td {
+      padding: 33px 0 0;
+      color: var(--light-color);
+
+      @include tablet {
+        padding-top: 20px;
+      }
+    }
+
+    & b {
+      font-weight: 700;
+    }
+
+    & :is(th, td):not(:last-child) {
+      border-right: 1px solid #707070;
+    }
+
+    & tbody td {
+      border-top: 1px solid #707070;
+    }
+
+    & tbody tr:last-child td:first-child {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 60%;
+        height: 1px;
+        background-color: #707070;
+      }
+    }
+  }
+
+  @include small-desktop {
+    padding-block: 100px;
+  }
+
+  @include small-tablet {
+    padding-block: 80px;
+  }
+}

@@ -1,0 +1,24 @@
+:root {
+  // Базовые стили
+  --font-family: "Heebo", sans-serif;
+  --second-family: "Yantramanav", sans-serif;
+  --content-width: 1300px;
+  --container-offset: 15px;
+  --offset: 36px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --border-radius: 30px;
+  --input-height: 54px;
+  --transition-duration: 0.2s;
+  --header-height: 90px;
+
+  // Размеры шрифта
+  --main-size: 16px;
+  --title-size: 40px;
+
+  // Цвета
+  --light-color: #fff;
+  --dark-color: #000;
+  --gray-color: #c4c4c4;
+  --dark-gray-color: #404040;
+  --background-color: #131619;
+}

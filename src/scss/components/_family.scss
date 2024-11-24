@@ -1,0 +1,41 @@
+@use "../mixins" as *;
+
+.family {
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 132px 15px 62px;
+    text-align: center;
+    row-gap: 10px;
+
+    @include small-tablet {
+      padding: 100px 15px 50px;
+    }
+  }
+
+  &__title.title--big {
+    font-size: clamp(20px, 3.12vw, 60px);
+  }
+
+  &__body {
+    display: flex;
+    column-gap: 26px;
+    justify-content: center;
+
+    @include small-tablet {
+      column-gap: 10px;
+    }
+  }
+
+  &__image {
+    @include small-desktop {
+      height: 360px;
+    }
+
+    @include small-tablet {
+      height: 180px;
+    }
+  }
+}
