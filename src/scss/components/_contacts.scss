@@ -40,7 +40,7 @@
     }
   }
 
-  &__list {
+  &__columns {
     display: grid;
     column-gap: 30px;
     grid-template-columns: repeat(4, 1fr);
@@ -56,7 +56,7 @@
     }
   }
 
-  &__item {
+  &__column {
     max-width: 303px;
 
     &-title {
