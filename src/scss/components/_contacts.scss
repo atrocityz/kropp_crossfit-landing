@@ -38,6 +38,10 @@
     @include tablet {
       text-align: center;
     }
+
+    & a {
+      text-decoration: underline;
+    }
   }
 
   &__columns {
@@ -80,14 +84,12 @@
 
     &:last-child &-title::after {
       content: "";
-      position: absolute;
-      left: 6em;
-      top: 20%;
-      height: 0.75em;
+      display: inline-block;
+      margin-left: 0.5em;
+      height: 0.74em;
       background: url("../img/svg/white-arrow-icon.svg") center/contain no-repeat;
-      transform: translateY(-50%);
-      transform: rotate(90deg);
       aspect-ratio: 1;
+      scale: -1 1;
     }
 
     &-content {
@@ -164,6 +166,7 @@
 
   &__input {
     border-color: var(--light-color);
+    padding-right: 70px;
     width: 100%;
   }
 
